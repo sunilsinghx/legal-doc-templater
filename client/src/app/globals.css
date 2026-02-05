@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.toast-slide-in {
+  animation: slideInFromRight 0.4s ease-out forwards;
+}
+
+.pdf-safe,
+.pdf-safe * {
+  color: rgb(15, 23, 42) !important; /* slate-900 */
+  background-color: transparent !important;
+  border-color: rgb(226, 232, 240) !important; /* slate-200 */
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+

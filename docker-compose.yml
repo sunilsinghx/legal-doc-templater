@@ -1,0 +1,28 @@
+
+services:
+  server:
+    build:
+      context: ./server
+    container_name: fastapi-server
+    env_file:
+      - ./server/.env
+    volumes:
+      - ./server/data:/app/data  
+      - ./server:/app
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+  client:
+    build:
+      context: ./client
+      args:
+        NEXT_PUBLIC_API_URL: http://localhost:8000
+    container_name: nextjs-client
+    env_file:
+      - ./client/.env
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server
+    restart: unless-stopped

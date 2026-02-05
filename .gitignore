@@ -1,0 +1,15 @@
+
+#client dependencies
+client/node_modules
+client/.next/
+client/out/
+client/build
+client/.env
+client/.vercel
+
+#server dependencies
+server/venv
+server/app/__pycache__
+server/app/services/__pycache__
+server/data/legal_auto.db
+server/.env
