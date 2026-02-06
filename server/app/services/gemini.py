@@ -5,7 +5,8 @@ import os
 import asyncio
 
 
-API_KEY = os.getenv("GOOGLE_API_KEY")
+API_KEY = os.getenv("GOOGLE_API_KEY", "").strip()
+print("API key length:", len(os.getenv("GOOGLE_API_KEY", "")))
 if not API_KEY:
     raise RuntimeError("GOOGLE_API_KEY environment variable not set")
 
