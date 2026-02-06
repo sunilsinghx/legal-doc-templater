@@ -18,6 +18,8 @@
     COPY --from=builder /wheels /wheels
     RUN pip install --no-cache /wheels/*
     
+    RUN mkdir -p /app/data
+    
     COPY . .
     
     EXPOSE 8000
