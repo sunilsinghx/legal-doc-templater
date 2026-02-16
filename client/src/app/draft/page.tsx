@@ -80,7 +80,7 @@ export default function Page() {
     if (questions[nextIndex]) {
       const [, nextQuestion] = questions[nextIndex];
       setCurrentIndex(nextIndex);
-      setMessages((m: any) => [...m, { role: "system", text: nextQuestion }]);
+      setMessages((m: Message[]) => [...m, { role: "system", text: nextQuestion }]);
     } else {
       try {
         setIsGenerating(true);
@@ -119,32 +119,23 @@ export default function Page() {
   return (
     <>
       <main
-        className="
-      min-h-screen flex items-center justify-center p-6
-      bg-linear-to-r from-slate-100 via-gray-100 to-slate-200
+        className="min-h-screen sm:flex sm:items-center sm:justify-center sm:p-6 bg-linear-to-r from-slate-100 via-gray-100 to-slate-200
     "
       >
-        <div className="w-full max-w-2xl">
+        <div className="w-full sm:max-w-2xl h-screen sm:h-auto">
           {!draftData ? (
             /* ---------- START SCREEN ---------- */
             <Draft loading={loading} handleStartDraft={handleStartDraft} />
           ) : (
             /* ---------- CHAT / RESULT ---------- */
             <div
-              className="
-            h-[90vh] w-full bg-white rounded-2xl
-            shadow-xl flex flex-col overflow-hidden
+              className="h-full sm:h-[90vh] w-full bg-white sm:rounded-2xl sm:shadow-xl flex flex-col overflow-hidden
           "
             >
-              <div className=" px-6 py-3 border-b flex items-center gap-2 text-sm">
+              <div className="px-6 py-3 border-b flex items-center gap-2 text-sm">
                 <Link
                   href="/"
-                  className="
-      inline-flex items-center gap-1
-      text-gray-600
-      hover:text-indigo-600
-      transition
-    "
+                  className="inline-flex items-center gap-1 text-gray-600 hover:text-indigo-600 transition"
                 >
                   ← Back to Home
                 </Link>
@@ -158,11 +149,9 @@ export default function Page() {
                 Draft Document
               </div>
 
-              {/* MACC */}
               {!finalDoc && (
                 <div
                   className="
-                  
                 flex-1 overflow-y-auto px-6 py-4
                 space-y-3 bg-gray-50
                 overflow-visible
@@ -201,8 +190,7 @@ export default function Page() {
                 </div>
               )}
 
-              {/* HERE */}
-
+              {/* Final Doc */}
               {finalDoc?.output && (
                 <>
                   <div className=" bg-white flex-1 overflow-hidden">

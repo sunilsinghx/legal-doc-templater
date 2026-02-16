@@ -42,7 +42,7 @@ def normalize_variables(vars: list[VariableSchema]) -> list[dict]:
 
 def embed_text(text: str) -> list[float]:
     response = client.models.embed_content(
-        model="text-embedding-004",
+        model="gemini-embedding-001",
         contents=text[:8000],
     )
     if not response.embeddings:

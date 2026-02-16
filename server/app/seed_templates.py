@@ -7,7 +7,7 @@ from app.services.gemini import embed_text
 SEED_TEMPLATES = [
     {
         "tags": ["confidentiality", "nda", "business relationship"],
-        "title": "MUTUAL NON.pdf",
+        "title": "MUTUAL NON-DISCLOSURE AGREEMENT",
         "variables": [
             {
                 "key": "effective_date",

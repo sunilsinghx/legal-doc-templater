@@ -122,7 +122,8 @@ async def start_draft(request: DraftRequest, db: Session = Depends(get_db)):
 
     try:
         result = await find_best_template(query, templates)
-    except Exception:
+    except Exception as e:
+        print(e)
         raise HTTPException(500, "Template matching failed")
 
     is_new_template = False
